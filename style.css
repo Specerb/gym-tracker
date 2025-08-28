@@ -1,0 +1,64 @@
+:root {
+  --bg: #0b0f15;
+  --card: #121826;
+  --text: #e8eef9;
+  --muted: #9fb0c9;
+  --accent: #4ea8de;
+  --danger: #e35d6a;
+  --ring: rgba(78,168,222,0.4);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 80% -200px, #16324d 0%, transparent 60%), var(--bg);
+  color: var(--text);
+}
+
+.container { width: min(960px, 92%); margin: 0 auto; }
+header { padding: 2rem 0 0.5rem; }
+h1 { margin: 0; font-weight: 800; letter-spacing: 0.2px; }
+h2 { margin: 0 0 0.75rem; font-size: 1.15rem; }
+.muted { color: var(--muted); }
+.tiny { font-size: 0.85rem; }
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.row { display: flex; gap: 0.6rem; align-items: center; margin: 0.5rem 0; flex-wrap: wrap; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; }
+
+label { min-width: 84px; color: var(--muted); }
+input[type="text"], input[type="number"], input[type="date"], select {
+  background: #0d1422; color: var(--text);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 10px;
+  padding: 0.55rem 0.7rem; outline: none;
+}
+input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--ring); }
+
+button {
+  background: var(--accent); color: #041018; border: none;
+  padding: 0.6rem 0.9rem; border-radius: 10px; font-weight: 700; cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+button.danger { background: var(--danger); color: white; }
+
+.file input[type="file"] { display: none; }
+.file {
+  padding: 0.55rem 0.9rem; border-radius: 10px; border: 1px dashed rgba(255,255,255,0.25);
+  cursor: pointer; color: var(--muted);
+}
+
+.tableWrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.65rem; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: left; }
+tbody tr:hover { background: rgba(255,255,255,0.03); }
+code { background: #0d1422; padding: 0.1rem 0.3rem; border-radius: 6px; }
